@@ -19,7 +19,7 @@ func (s *server) Plus(ctx context.Context, in *proto.CalcRequest) (*proto.CalcRe
 }
 
 func main() {
-	lis, err := net.Listen("tcp", ":50051")
+	lis, err := net.Listen("tcp", "0.0.0.0:50051")
 	if err != nil {
 		log.Fatalf("無法監聽該埠口：%v", err)
 	}
