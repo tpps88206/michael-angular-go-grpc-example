@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
     this.response = 'loading...';
     this.api.plus('calc', 1, 2).then((data)=> {
       console.log('api.plus', data);
-      this.response = `Loaded ${data['name']} using gRPC!`;
+      this.response = `Loaded ${data['result']} using gRPC!`;
     });
   }
 }

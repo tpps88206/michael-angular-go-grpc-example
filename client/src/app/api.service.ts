@@ -18,7 +18,7 @@ export class ApiService {
       console.log('ApiService.get', path);
       const req = new CalcRequest();
       req.setNumberA(a);
-      req.setNumberA(b);
+      req.setNumberB(b);
       this.client.plus(req, null, (err, response:CalcReply) => {
         if (err) {
           return reject(err);
