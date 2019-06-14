@@ -1,0 +1,39 @@
+version: '1'
+services:
+
+  server:
+    build: server
+    command: /app
+    ports:
+      - 50051:50051
+    networks:
+      - envoymesh
+
+  client:
+    build: client
+    command: npm start
+    depends_on:
+      - server
+      - proxy
+    ports:
+      - 4200:4200
+    networks:
+      - envoymesh
+    volumes:
+      - ./client:/usr/src/app:rw
+      - /usr/src/app/node_modules
+
+  proxy:
+    image: envoyproxy/envoy-alpine
+    environment:
+      NODE_ENV: development
+    ports:
+      - 8080:8080
+      - 8081:8081
+    networks:
+      - envoymesh
+    volumes:
+      - ./envoy.yaml:/etc/envoy/envoy.yaml
+
+networks:
+  envoymesh: {}
