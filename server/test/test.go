@@ -1,4 +1,4 @@
-package main
+package test
 
 import (
 	"log"
@@ -6,7 +6,7 @@ import (
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 
-	"./proto"
+	"../proto"
 )
 
 func main() {
