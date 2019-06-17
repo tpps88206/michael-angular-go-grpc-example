@@ -12,7 +12,7 @@ services:
     build: client
     depends_on:
       - server
-      - proxy
+#      - proxy
     ports:
       - 443:443
     networks:
@@ -20,17 +20,17 @@ services:
     volumes:
       - ./client:/usr/src/app:rw
 
-  proxy:
-    image: envoyproxy/envoy-alpine
-    environment:
-      NODE_ENV: development
-    ports:
-      - 8080:8080
-      - 8081:8081
-    networks:
-      - envoymesh
-    volumes:
-      - ./envoy.yaml:/etc/envoy/envoy.yaml
+#  proxy:
+#    image: envoyproxy/envoy-alpine
+#    environment:
+#      NODE_ENV: development
+#    ports:
+#      - 8080:8080
+#      - 8081:8081
+#    networks:
+#      - envoymesh
+#    volumes:
+#      - ./envoy.yaml:/etc/envoy/envoy.yaml
 
 networks:
   envoymesh: {}

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"google.golang.org/grpc/credentials"
 	"log"
 
 	"golang.org/x/net/context"
@@ -11,9 +10,7 @@ import (
 )
 
 func main() {
-	creds, _ := credentials.NewClientTLSFromFile("./ssl/ca.pem", "")
-
-	conn, err := grpc.Dial("localhost:50051", grpc.WithTransportCredentials(creds))
+	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("Connect failed：%v", err)
 	}

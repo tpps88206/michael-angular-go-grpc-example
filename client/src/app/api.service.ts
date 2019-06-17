@@ -10,7 +10,7 @@ export class ApiService {
   client: CalculatorClient;
 
   constructor() {
-    this.client = new CalculatorClient('http://localhost:50051');
+    this.client = new CalculatorClient('localhost:50051');
   }
 
   plus(path: string, a: number, b: number) {
