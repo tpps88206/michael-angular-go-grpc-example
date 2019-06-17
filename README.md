@@ -1,28 +1,34 @@
 # angular-go-grpc-example
 
-The example of gRPC project with Angular and Golang
+The example of gRPC project with Angular and Go.
 
 ## Development using
 
-* Angular 8
-* Golang 
-* Protocol Buffers 
+* Angular 8.0.0
+* Go 1.12
+* Protocol Buffers 3.7.1
 
 
 ## Installation
 
-Install dependencies using:
+Use Docker Compose to build client, server and proxy together.
 
     docker-compose build
 
 
 ## Usage
 
-Run backend, frontend and proxy together using:
+Run client, server and proxy together.
 
     docker-compose up
+    
+## Access path
 
-Access the Nest gRPC microservice at:
+Client site with Angular:
+
+    http://localhost:4200/
+
+Server site with Go:
 
     http://localhost:50051/
 
@@ -30,21 +36,20 @@ Access the Envoy Proxy at:
 
     http://localhost:8080/
 
-View the Angular frontend at:
-
-    http://localhost:4200/
-
-
 ## Protocol Buffers
 
-If you update backend .proto files, then you will need to recompile them to frontend services using:
+If you need to modify .proto files, you can go to `./proto` and then you will need to compile them again.
 
-    cd frontend
-    npm run compile
+    cd proto
+    vim calc.proto
+    
+    # After modify
+    cd ..
+    sh ./protoc.sh
 
 You can find out more information about gRPC requests and generated client-side code here:
 
-    https://github.com/improbable-eng/grpc-web/blob/master/client/grpc-web/docs/code-generation.md
+    
 
 
 ## Exploring and testing endpoints
@@ -67,6 +72,7 @@ Then view the endpoints using:
     /frontend                              --> Frontend sources files
 
 
-## Contact
+## Reference
 
-For more information please contact kmturley
+https://github.com/improbable-eng/grpc-web/blob/master/client/grpc-web/docs/code-generation.md
+
