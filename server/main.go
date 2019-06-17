@@ -19,9 +19,9 @@ func (s *server) Plus(ctx context.Context, in *proto.CalcRequest) (*proto.CalcRe
 }
 
 func main() {
-    log.Printf("Start gRPC server")
+        log.Printf("Start gRPC server")
 
-	lis, err := net.Listen("tcp", "0.0.0.0:50051")
+        lis, err := net.Listen("tcp", ":50051")
 	if err != nil {
 		log.Fatalf("Can not listen the port：%v", err)
 	}
