@@ -1,15 +1,21 @@
-FROM node:12
+FROM node:12 AS build-env
 
-# Create app directory
+# create app directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-# Install app dependencies
+# install app dependencies
 COPY package.json /usr/src/app
 RUN npm install
 
-# Bundle app source
+# build app
 COPY . /usr/src/app
+RUN $(npm bin)/ng build --prod
 
-EXPOSE 4200
-CMD ["npm", "start"]
+# final stage
+FROM nginx:alpine
+COPY --from=build-env /usr/src/app/dist/angular-grpc-client /usr/share/nginx/html
+
+COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80

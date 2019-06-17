@@ -47,11 +47,6 @@ If you need to modify .proto files, you can go to `./proto` and then you will ne
     cd ..
     sh ./protoc.sh
 
-You can find out more information about gRPC requests and generated client-side code here:
-
-    
-
-
 ## Exploring and testing endpoints
 
 Install grpc_cli using:
@@ -74,5 +69,7 @@ Then view the endpoints using:
 
 ## Reference
 
+https://github.com/kmturley/angular-nest-grpc
+https://github.com/easyCZ/grpc-web-hacker-news
 https://github.com/improbable-eng/grpc-web/blob/master/client/grpc-web/docs/code-generation.md
 
