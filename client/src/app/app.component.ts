@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {ApiService} from "./api.service";
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from './api.service';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +11,12 @@ export class AppComponent implements OnInit {
   a = 10;
   b = 20;
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService) {
+  }
 
   ngOnInit(): void {
     this.response = 'loading...';
-    this.api.plus('calc', this.a, this.b).then((data)=> {
+    this.api.plus('calc', this.a, this.b).then((data) => {
       console.log('api.plus', data);
       this.response = `Result is ${data['result']} (by using gRPC!)`;
     });

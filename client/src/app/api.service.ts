@@ -19,7 +19,7 @@ export class ApiService {
       const req = new CalcRequest();
       req.setNumberA(a);
       req.setNumberB(b);
-      this.client.plus(req, null, (err, response:CalcReply) => {
+      this.client.plus(req, null, (err, response: CalcReply) => {
         if (err) {
           return reject(err);
         }
