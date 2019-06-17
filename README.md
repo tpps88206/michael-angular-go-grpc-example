@@ -26,7 +26,7 @@ Run client, server and proxy together.
 
 Client site with Angular:
 
-    http://localhost:4200/
+    http://localhost:80/
 
 Server site with Go:
 
@@ -46,30 +46,32 @@ If you need to modify .proto files, you can go to `./proto` and then you will ne
     # After modify
     cd ..
     sh ./protoc.sh
+    
+## Client development mode
 
-## Exploring and testing endpoints
+The Docker Image will build client with production mode. If you need to use development mode.
 
-Install grpc_cli using:
+    cd ./client
+    npm start
+    
+And the client access path is
 
-    brew tap grpc/grpc
-    brew install --with-plugins grpc
+    http://localhost:4200/
 
-Then view the endpoints using:
+## Testing endpoints
 
-    export GRPC_VERBOSITY=DEBUG
-    grpc_cli ls localhost:50051
-    grpc_cli call localhost:50051 FindOne "id: 1" --protofiles=backend/src/hero/hero.proto
+If you want to try your server endpoint without client and proxy.
 
-
-## Directory structure
-
-    /backend                               --> Backend source files
-    /frontend                              --> Frontend sources files
-
+    cd ./server/test
+    go run main.go
 
 ## Reference
 
 https://github.com/kmturley/angular-nest-grpc
+
 https://github.com/easyCZ/grpc-web-hacker-news
+
+https://github.com/improbable-eng/grpc-web
+
 https://github.com/improbable-eng/grpc-web/blob/master/client/grpc-web/docs/code-generation.md
 

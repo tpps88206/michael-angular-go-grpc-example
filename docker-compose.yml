@@ -19,7 +19,6 @@ services:
       - envoymesh
     volumes:
       - ./client:/usr/src/app:rw
-      - /usr/src/app/node_modules
 
   proxy:
     image: envoyproxy/envoy-alpine
