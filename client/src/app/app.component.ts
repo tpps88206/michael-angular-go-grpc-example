@@ -8,15 +8,16 @@ import {ApiService} from "./api.service";
 })
 export class AppComponent implements OnInit {
   response = '';
+  a = 10;
+  b = 20;
 
   constructor(private api: ApiService) {}
 
   ngOnInit(): void {
-    console.log('AppComponent', this);
     this.response = 'loading...';
-    this.api.plus('calc', 1, 2).then((data)=> {
+    this.api.plus('calc', this.a, this.b).then((data)=> {
       console.log('api.plus', data);
-      this.response = `Loaded ${data['result']} using gRPC!`;
+      this.response = `Result is ${data['result']} (by using gRPC!)`;
     });
   }
 }
