@@ -19,9 +19,11 @@ func (s *server) Plus(ctx context.Context, in *proto.CalcRequest) (*proto.CalcRe
 }
 
 func main() {
+    log.Printf("Start gRPC server")
+
 	lis, err := net.Listen("tcp", "0.0.0.0:50051")
 	if err != nil {
-		log.Fatalf("無法監聽該埠口：%v", err)
+		log.Fatalf("Can not listen the port：%v", err)
 	}
 
 	s := grpc.NewServer()
@@ -30,6 +32,6 @@ func main() {
 
 	reflection.Register(s)
 	if err := s.Serve(lis); err != nil {
-		log.Fatalf("無法提供服務：%v", err)
+		log.Fatalf("Can not provide service：%v", err)
 	}
 }

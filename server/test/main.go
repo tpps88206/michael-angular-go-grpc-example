@@ -12,7 +12,7 @@ package main
  func main() {
 	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
 	if err != nil {
-		log.Fatalf("連線失敗：%v", err)
+		log.Fatalf("Connect failed：%v", err)
 	}
 	defer conn.Close()
 
@@ -20,7 +20,7 @@ package main
 
  	r, err := c.Plus(context.Background(), &proto.CalcRequest{NumberA: 1, NumberB: 2})
 	if err != nil {
-		log.Fatalf("無法執行 Plus 函式：%v", err)
+		log.Fatalf("Can not execute function：%v", err)
 	}
-	log.Printf("回傳結果：%d", r.Result)
+	log.Printf("Result：%d", r.Result)
 }
