@@ -2,8 +2,7 @@ FROM golang:alpine AS build-env
 
 # build stage
 RUN apk update && apk upgrade && apk add --no-cache bash git openssh
-ADD main.go /src
-ADD proto /src
+ADD . /src
 RUN go get -u google.golang.org/grpc
 RUN go get -u golang.org/x/net/context
 RUN go get -u github.com/golang/protobuf/proto
