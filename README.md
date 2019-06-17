@@ -67,11 +67,12 @@ If you want to try your server endpoint without client and proxy.
 
 ## Reference
 
-https://github.com/kmturley/angular-nest-grpc
-
-https://github.com/easyCZ/grpc-web-hacker-news
-
-https://github.com/improbable-eng/grpc-web
-
-https://github.com/improbable-eng/grpc-web/blob/master/client/grpc-web/docs/code-generation.md
-
+* https://github.com/kmturley/angular-nest-grpc
+* https://github.com/easyCZ/grpc-web-hacker-news
+* https://github.com/improbable-eng/grpc-web
+* https://github.com/protocolbuffers/protobuf
+* https://github.com/envoyproxy/envoy
+* https://github.com/appleboy/docker-multi-stage-build
+* https://grpc.io/blog/state-of-grpc-web/
+* https://blog.envoyproxy.io/envoy-and-grpc-web-a-fresh-new-alternative-to-rest-6504ce7eb880
+* http://www.servicemesher.com/envoy/start/sandboxes/grpc_bridge.html
