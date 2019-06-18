@@ -2,6 +2,8 @@
 
 The example of gRPC project with Angular and Go.
 
+![Structure](structure.png)
+
 ## Development using
 
 * Angular 8.0.0
