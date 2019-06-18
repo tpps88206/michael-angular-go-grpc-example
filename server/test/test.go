@@ -1,4 +1,4 @@
-package test
+package main
 
 import (
 	"log"
@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
+	conn, err := grpc.Dial("10.91.4.81:50051", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("Connect failed：%v", err)
 	}
