@@ -4,19 +4,26 @@ The example of gRPC project with Angular and Go.
 
 ![Structure](structure.png)
 
+## Status
+
+[![Build Status](https://travis-ci.org/tpps88206/angular-go-grpc-example.svg?branch=master)](https://travis-ci.org/tpps88206/angular-go-grpc-example)
+
+Platform|Image size|Image version
+---|---|---
+Client|[![](https://images.microbadger.com/badges/image/tpps88206/angular-go-grpc-example-client.svg)](https://microbadger.com/images/tpps88206/angular-go-grpc-example-client)|[![](https://images.microbadger.com/badges/version/tpps88206/angular-go-grpc-example-client.svg)](https://microbadger.com/images/tpps88206/angular-go-grpc-example-client)
+Server|[![](https://images.microbadger.com/badges/image/tpps88206/angular-go-grpc-example-server.svg)](https://microbadger.com/images/tpps88206/angular-go-grpc-example-server)|[![](https://images.microbadger.com/badges/version/tpps88206/angular-go-grpc-example-server.svg)](https://microbadger.com/images/tpps88206/angular-go-grpc-example-server)
+
 ## Development using
 
 * Angular 8.0.0
 * Go 1.12
 * Protocol Buffers 3.7.1
 
-
 ## Installation
 
 Use Docker Compose to build client, server and proxy together.
 
     docker-compose build
-
 
 ## Usage
 
